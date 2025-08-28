@@ -7,6 +7,153 @@
     <title>Atividade do Marcinho</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Cascata, Especificidade, Combinadores e etc...</h1>
+        <nav>
+            <ul class="azinhos">
+                <li>
+                    <a href="#cascata">Cascata</a>
+                </li>
+                <li>
+                    <a href="#especificidade">Especificidade</a>
+                </li>
+                <li>
+                    <a href="#combinadores">Combinadores</a><br>
+                </li>
+                <li>
+                    <a href="#box-model">Box Model</a>
+                </li>
+                <li>
+                    <a href="#display">Display</a>
+                </li>
+                <li>
+                    <a href="#pseudo">Pseudo-Classes</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+<section class="cascata">
+    <h2 id="cascata">Cascata</h2>
+<p>A regra da cascata no CSS é o conjunto de regras que o navegador usa para decidir qual estilo aplicar quando múltiplas regras conflitantes se aplicam a um mesmo elemento. Ela é chamada de “cascata” porque o CSS segue uma ordem de prioridade em forma de "queda", determinando qual estilo vence.</p>
+</section>
+<hr>
+<section class="especificidade">
+    <h2 id="especificidade">Especificidade</h2>
+<ul>
+    <li><strong>Especificidade do seletor pela <em>tag</em></strong>
+    </li>
+    <p>É o seletor mais básico. Ele se refere diretamente a uma tag HTML, como <em>p, div, h1</em>, etc. Esse tipo de seletor tem o menor peso de todos. Pontuação de especificidade: 1</p>
+    <li><strong>Especificidade do seletor pela <em>classe</em></strong>
+    </li>
+    <p>Refere-se a uma classe atribuída a um ou mais elementos HTML. É mais específico do que o seletor por <em>tag</em>, e é o tipo mais comum usado em projetos. Pontuação de especificidade: 10</p>
+    <li><strong>Especificidade do seletor pelo <em>id</em></strong>
+    </li>
+    <p>Refere-se a um identificador único de um elemento HTML. É mais específico que os seletores por <em>tag</em> e por classe. Pontuação de especificidade: 100</p>
+</ul>
+</section>
+<hr>
+<section class="combinadores">
+    <h2 id="combinadores">Combinadores</h2>
+<ul>
+    <li>
+        <strong>Combinação de seletores com espaço:</strong>
+    </li>
+    <p>Essa combinação significa que o seletor está buscando qualquer elemento <em>h1</em> que esteja dentro de um elemento com a classe <em>.primeiro</em>, em qualquer nível de profundidade.</p>
+    <li>
+        <strong>Combinação de seletores com <em>></em></strong>
+    </li>
+    <p>Neste tipo de combinação, o CSS seleciona apenas o elemento <em>h1</em> que for filho direto de um elemento com a classe <em>.primeira</em>.</p>
+    <li>
+        <strong>Combinação de seletores com <em>+</em></strong>
+    </li>
+    <p>Esse seletor seleciona um <em>h1</em> que vem logo depois de outro <em>h1</em>, dentro de <em>.primeira</em>. Ele se chama irmão adjacente, pois busca um elemento que esteja imediatamente após o anterior no mesmo nível.</p>
+</ul>
+</section>
+<hr>
+<section class="box-model">
+    <h2 id="box-model">Box Model</h2>
+    <p>O Box Model (ou Modelo de Caixa) é a forma como o CSS enxerga e estrutura todos os elementos HTML na página. Cada elemento visual é tratado como uma caixa retangular, composta por várias camadas. Essas camadas determinam tamanho, espaçamento e comportamento do elemento na tela.</p>
+<h3>Margin</h3>
+    <p>A <em>margin</em> é o espaço externo, ou seja, a distância entre o elemento e outros elementos ao seu redor.
+    Serve para afastar elementos uns dos outros e organizar melhor o layout.</p>
+<h3>Padding</h3>
+    <p>A propriedade <em>padding</em> define o espaço interno entre o conteúdo do elemento e sua borda. Ele "empurra" o conteúdo para dentro. É útil para dar respiro ao texto ou imagem dentro de uma caixa, sem alterar o espaço ao redor.</p>
+<h3>Border</h3>
+    <p>A <em>border</em> é a linha que envolve o padding e o conteúdo. Pode ter cor, espessura e estilo.
+    Ela pode ser usada tanto para destacar elementos visualmente quanto para delimitar áreas na página.</p>
+<h4>Shorthand</h4>
+<ul>
+    <li>
+        Com 1 valor: aplica o mesmo valor para todos os lados (top, right, bottom, left).
+    </li>
+    <li>
+        Com 2 valores: O primeiro valor é aplicado ao topo e base (top e bottom). O segundo valor é aplicado às laterais (right e left).
+    </li>
+    <li>
+        Com 3 valores: O primeiro valor é o top. O segundo valor é para left e right. O terceiro valor é o bottom.
+    </li>
+    <li>
+        Com 4 valores: Os valores são aplicados no sentido horário (top, right, bottom, left)
+    </li>
+</ul>
+</section>
+<hr>
+<section class="display">
+    <h2 id="display">Display</h2>
+<h3>display: block</h3>
+<p>Quando um elemento tem display: block, ele ocupa toda a largura disponível do contêiner pai, empurrando os outros elementos para baixo (em uma nova linha). Ele sempre começa em uma nova linha.</p>
+<ul>
+    <h4>Exemplos de elementos:</h4>
+    <li>
+        <em>div</em>
+    </li>
+    <li>
+        <em>p</em>
+    </li>
+    <li>
+        <em>h1</em> até <em>h6</em>
+    </li>
+    <li>
+        <em>section, article, nav</em>, etc.
+    </li>
+</ul>
+
+<h3>display: inline</h3>
+<p>Elementos com display: inline não quebram a linha. Eles ficam ao lado de outros elementos, um após o outro, como se fossem texto. Eles ocupam apenas o espaço necessário para seu conteúdo, sem forçar quebra de linha.</p>
+<ul>
+    <h4>Exemplos de elementos:</h4>
+    <li>
+        <em>span</em>
+    </li>
+    <li>
+        <em>a</em>
+    </li>
+    <li>
+        <em>strong, em, b, i</em>
+    </li>
+</ul>
+</section>
+<hr>
+<section class="pseudo">
+    <h2 id="pseudo">Pseudo-Classes</h2>
+    <ul>
+        <li>
+            <strong><em>:first-child</em></strong> : seleciona o primeiro filho de qualquer tipo
+        </li>
+        <li>
+            <strong><em>:last-child</em></strong> : seleciona o último filho de qualquer tipo
+        </li>
+        <li>
+            <strong><em>:nth-child(n)</em></strong> : seleciona o nº filho geral, contando todos os elementos
+        </li>
+        <li>
+            <strong><em>:nth-of-type(n)</em></strong> : seleciona o nº filho de um tipo específico de tag
+        </li>
+    </ul>
+</section>
+</main>
+
 </body>
 </html>
